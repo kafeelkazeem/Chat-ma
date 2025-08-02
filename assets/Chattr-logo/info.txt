@@ -1,0 +1,14 @@
+
+Hope you enjoy your new logo, here are the people that
+made your beautiful logo happen :)
+font name: LinguisticsPro-Regular
+font link: https://github.com/StefanPeev/Linguistics-Pro
+font author: Local Fonts
+font author site: https://localfonts.eu/
+Slogan Font: OFLGoudyStMTT.ttf
+
+icon designer: Warm Ashes
+icon designer link: /creator/warmashes/
+        
+{"bg":"#E9E6E8","icon-gradient-0":"#1A1439","icon-gradient-1":"#CB9F98","font":"#211A1E","slogan":"#352e32"}
+      

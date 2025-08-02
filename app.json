@@ -4,14 +4,13 @@
     "slug": "chattr",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
-    "scheme": "chattr",
+    "icon": "./assets/Chattr-logo/profile.png",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/images/splash-icon.png",
+      "image": "./assets/Chattr-logo/profile.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#f0f0f0"
     },
     "ios": {
       "supportsTablet": true

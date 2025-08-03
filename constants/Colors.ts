@@ -1,6 +1,9 @@
 const tintColorLight = '#2f95dc';
 const tintColorDark = '#fff';
 
+const purple = '#43116A'
+const darkBlue = '#0A1832'
+
 export default {
   light: {
     text: '#000',
@@ -16,4 +19,7 @@ export default {
     tabIconDefault: '#ccc',
     tabIconSelected: tintColorDark,
   },
+
+  purple: purple,
+  darkBlue: darkBlue,
 };

@@ -38,7 +38,7 @@ export default function Index(){
                 <Text className="text-base text-center text-slate-300 mt-6 mb-6">OR</Text>
                 <View className="w-full">
                     <TouchableOpacity className="bg-white w-[75%] mx-auto py-4 rounded-2xl mt-1"><Text className="text-black text-lg text-center font-semibold">Sign up with mail</Text></TouchableOpacity>
-                    <Text className="text-white text-xl text-center mt-5">Existing account? <Link href='/' className="font-bold">Login</Link></Text>
+                    <Text className="text-white text-xl text-center mt-5">Existing account? <Link href='/auth/signin' className="font-bold">Login</Link></Text>
                 </View>
             </LinearGradient>
         </View> 

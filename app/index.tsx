@@ -3,6 +3,7 @@ import { Text, TouchableOpacity, View } from "react-native";
 import { LinearGradient } from 'expo-linear-gradient';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import { StatusBar } from 'expo-status-bar';
 
 export default function Index(){
     const route = useRouter()
@@ -10,6 +11,7 @@ export default function Index(){
         <View className="flex-1 w-full justify-center items-center">
             <LinearGradient colors={['#43116A', '#0A1832']} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }} 
             className="flex-1 w-screen pt-10">
+                <StatusBar style="light" />
                 <View className="w-screen pt-10 flex flex-row justify-center items-center gap-1">
                     <Text className="text-white text-2xl font-semibold tracking-wider text-center">Chattr</Text>
                     <MaterialIcons className="-mt-5 -ml-2" name="connect-without-contact" size={35} color="white" />

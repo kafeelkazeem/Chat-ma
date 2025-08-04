@@ -50,11 +50,13 @@ function RootLayoutNav() {
   const colorScheme = useColorScheme();
 
   return (
+    <>
     <ThemeProvider value={DefaultTheme}>
       <Stack>
         <Stack.Screen name="index" options={{ headerShown: false }} />
         <Stack.Screen name="auth" options={{ headerShown: false }} />
       </Stack>
     </ThemeProvider>
+    </>
   );
 }

@@ -3,6 +3,7 @@
     "name": "chattr",
     "slug": "chattr",
     "version": "1.0.0",
+    "scheme": "chattr",
     "orientation": "portrait",
     "icon": "./assets/Chattr-logo/profile.png",
     "userInterfaceStyle": "automatic",

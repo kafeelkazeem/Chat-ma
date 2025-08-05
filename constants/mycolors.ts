@@ -1,0 +1,1 @@
+export const green: String = '#24786D'

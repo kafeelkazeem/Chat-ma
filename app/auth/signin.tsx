@@ -1,6 +1,5 @@
-import { View, Text, TouchableOpacity, TextInput, SafeAreaView, KeyboardAvoidingView, Platform, ScrollView } from "react-native";
+import { View, Text, TouchableOpacity, TextInput, KeyboardAvoidingView, Platform, ScrollView } from "react-native";
 import AntDesign from '@expo/vector-icons/AntDesign';
-import { green } from "@/constants/mycolors";
 import AuthBtn from "@/components/button/authBtn";
 import { Link } from "expo-router";
 

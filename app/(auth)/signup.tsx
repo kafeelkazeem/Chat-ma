@@ -1,7 +1,17 @@
 import AuthBtn from "@/components/button/authBtn";
+import { apiUrl } from "@/constants/apiUrl";
+import axios from "axios";
 import { KeyboardAvoidingView, Platform, ScrollView, Text, TextInput, View } from "react-native";
 
 export default function Signup(){
+    // const Check = async () =>{
+    //     try {
+    //         const res = await axios.post(`${apiUrl}/signup`, {username: 'myname', email: 'myname@gmail.com', password: '12345'})
+    //         console.log(res.data)
+    //     } catch (error) {
+    //         console.log(error)
+    //     }
+    // }
     return(
         <KeyboardAvoidingView className="flex-1" behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
             <ScrollView contentContainerStyle={{ flexGrow: 1, justifyContent: 'center' }} keyboardShouldPersistTaps="handled">
@@ -40,7 +50,7 @@ export default function Signup(){
                         />
                     </View>
                     <View className="w-full mt-7">
-                        <AuthBtn title='Sign up' onPress={() => console.log('signupped')} />
+                        <AuthBtn title='Sign up' onPress={() => console.log('signup')} />
                     </View>
                 </View>
             </ScrollView>

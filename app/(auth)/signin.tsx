@@ -1,10 +1,10 @@
 import { View, Text, TouchableOpacity, TextInput, KeyboardAvoidingView, Platform, ScrollView } from "react-native";
 import AntDesign from '@expo/vector-icons/AntDesign';
 import AuthBtn from "@/components/button/authBtn";
-import { Link } from "expo-router";
-
+import { Link, useRouter } from "expo-router";
 
 export default function Signin(){
+    const router = useRouter()
     return(
         <KeyboardAvoidingView className="flex-1" behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
             <ScrollView contentContainerStyle={{ flexGrow: 1, justifyContent: 'center' }} keyboardShouldPersistTaps="handled">
@@ -49,7 +49,7 @@ export default function Signin(){
                         />
                     </View>
                     <View className="w-full mt-7">
-                        <AuthBtn title='Login' onPress={() => console.log('logged in')} />
+                        <AuthBtn title='Login' onPress={() => router.navigate('/(tabs)')} />
                         <Link className="mt-7" href={'/'}><Text className="text-[#24786D] text-lg text-center">Forgot Password?</Text></Link>
                     </View>
                 </View>

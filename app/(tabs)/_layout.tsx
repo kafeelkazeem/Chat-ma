@@ -27,7 +27,7 @@ export default function TabsLayout() {
           tabBarIcon: ({ color }) => (
             <AntDesign name="message1" size={26} color={color} />
           ),
-          headerShown: true,
+          headerShown: false,
           tabBarLabelStyle: { fontSize: 13, letterSpacing: 1 },
         }}
       />

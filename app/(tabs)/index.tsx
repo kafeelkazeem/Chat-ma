@@ -2,6 +2,7 @@ import { ScrollView, Text, View } from 'react-native';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import { StatusBar } from 'expo-status-bar';
 import Avater from '@/components/avater';
+import Friend from '@/components/friend';
 
 export default function MessagesScreen() {
     return (
@@ -39,7 +40,9 @@ export default function MessagesScreen() {
           </ScrollView>
         </View>
         <View className='w-full flex-1 bg-white mt-4 rounded-t-[2.3rem]'>
-
+          <ScrollView className='w-full flex p-2 pt-5'>
+            <Friend />
+          </ScrollView>
         </View>
       </View>
     );

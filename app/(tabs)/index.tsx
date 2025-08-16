@@ -35,10 +35,6 @@ export default function MessagesScreen() {
             <Avater />
             <Avater />
             <Avater />
-            <Avater />
-            <Avater />
-            <Avater />
-            <Avater />
           </ScrollView>
         </View>
         <View className='w-full flex-1 bg-white mt-4 rounded-t-[2.3rem]'>

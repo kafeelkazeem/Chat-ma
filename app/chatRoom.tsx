@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { View, Text, TouchableOpacity, TextInput, KeyboardAvoidingView, Platform, SafeAreaView, FlatList, ListRenderItemInfo } from "react-native";
 import Entypo from '@expo/vector-icons/Entypo';
 import Ionicons from '@expo/vector-icons/Ionicons';
+import * as NavigationBar from 'expo-navigation-bar';
 
 // Define the type for a single message object.
 interface Message {
@@ -43,6 +44,16 @@ export default function ChatRoom() {
       setMessage("");
     }
   };
+
+  useEffect(() => {
+    // This will set the navigation bar color when the component mounts.
+    NavigationBar.setBackgroundColorAsync('lightgray');
+    
+    // You can also control the visibility of the text and icons.
+    // 'light' is for light content on a dark background.
+    // 'dark' is for dark content on a light background.
+    NavigationBar.setButtonStyleAsync('dark');
+  }, []);
 
   // Simulate a friend's reply after a short delay
   useEffect(() => {

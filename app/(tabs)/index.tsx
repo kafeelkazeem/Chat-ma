@@ -3,8 +3,10 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 import { StatusBar } from 'expo-status-bar';
 import Avater from '@/components/avater';
 import Friend from '@/components/friend';
+import { useRouter } from 'expo-router';
 
 export default function MessagesScreen() {
+    const router = useRouter()
     return (
       <View className="flex-1 bg-[#000E08] w-full">
         <StatusBar style='light' />
@@ -41,7 +43,7 @@ export default function MessagesScreen() {
         </View>
         <View className='w-full flex-1 bg-white mt-4 rounded-t-[2.3rem]'>
           <ScrollView className='w-full flex p-2 pt-5'>
-            <Friend />
+            <Friend onPress={() => router.navigate('/chatRoom')}/>
           </ScrollView>
         </View>
       </View>

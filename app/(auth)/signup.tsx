@@ -13,7 +13,7 @@ export default function Signup(){
     //     }
     // }
     return(
-        <KeyboardAvoidingView className="flex-1" behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
+        <KeyboardAvoidingView style={{flex: 1}} behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
             <ScrollView contentContainerStyle={{ flexGrow: 1, justifyContent: 'center' }} keyboardShouldPersistTaps="handled">
                 <View className="flex-1 w-screen bg-white p-4">
                     <View className="w-full p-4">

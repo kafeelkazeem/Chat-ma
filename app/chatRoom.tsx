@@ -1,15 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  TextInput,
-  KeyboardAvoidingView,
-  Platform,
-  SafeAreaView,
-  FlatList,
-  ListRenderItemInfo,
-} from "react-native";
+import { View, Text, TouchableOpacity, TextInput, KeyboardAvoidingView, Platform, SafeAreaView, FlatList, ListRenderItemInfo } from "react-native";
 import Entypo from '@expo/vector-icons/Entypo';
 import Ionicons from '@expo/vector-icons/Ionicons';
 

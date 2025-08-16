@@ -6,6 +6,7 @@ import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
 import '../global.css';
+import * as NavigationBar from 'expo-navigation-bar';
 
 import { useColorScheme } from '@/components/useColorScheme';
 
@@ -27,6 +28,16 @@ export default function RootLayout() {
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
     ...FontAwesome.font,
   });
+
+  useEffect(() => {
+    // This will set the navigation bar color when the component mounts.
+    NavigationBar.setBackgroundColorAsync('lightgray');
+    
+    // You can also control the visibility of the text and icons.
+    // 'light' is for light content on a dark background.
+    // 'dark' is for dark content on a light background.
+    NavigationBar.setButtonStyleAsync('dark');
+  }, []);
 
   // Expo Router uses Error Boundaries to catch errors in the navigation tree.
   useEffect(() => {

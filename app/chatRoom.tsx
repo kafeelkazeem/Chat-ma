@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { View, Text, TouchableOpacity, TextInput, KeyboardAvoidingView, Platform, SafeAreaView } from "react-native";
+import Entypo from '@expo/vector-icons/Entypo';
+import Ionicons from '@expo/vector-icons/Ionicons';
 
 export default function ChatRoom() {
   const [message, setMessage] = useState("");
@@ -16,7 +18,7 @@ export default function ChatRoom() {
   };
 
   return (
-    <SafeAreaView className="flex-1 bg-white dark:bg-black">
+    <SafeAreaView className="flex-1 bg-white">
       <KeyboardAvoidingView
         className="flex-1"
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
@@ -27,18 +29,18 @@ export default function ChatRoom() {
         </View>
 
         {/* Input Area */}
-        <View className="flex-row items-center p-2 mb-12 bg-gray-100 dark:bg-zinc-800 border-t border-gray-300 dark:border-zinc-700 w-full">
+        <View className="flex-row items-center p-2 mb-12 bg-white border-t border-gray-300 w-full h-20">
           {/* Attachment Button */}
           <TouchableOpacity
             onPress={handleAttachment}
-            className="p-2 mr-2 rounded-full bg-blue-500 dark:bg-blue-600"
+            className="p-2 mr-2 rounded-full"
           >
-            <Text className="text-white text-lg font-bold">+</Text>
+            <Entypo name="attachment" size={24} color="black" />
           </TouchableOpacity>
 
           {/* Input */}
           <TextInput
-            className="flex-1 h-10 px-4 bg-white dark:bg-zinc-700 text-gray-900 dark:text-white rounded-full"
+            className="flex-1 h-14 px-4 bg-[#F3F6F6] text-gray-900 rounded-full"
             placeholder="Type a message..."
             placeholderTextColor="rgb(156 163 175)"
             value={message}
@@ -49,9 +51,9 @@ export default function ChatRoom() {
           {/* Send Button */}
           <TouchableOpacity
             onPress={handleSend}
-            className="ml-2 p-2 rounded-full bg-green-500 dark:bg-green-600"
+            className="ml-2 p-3 rounded-full bg-[#20A090]"
           >
-            <Text className="text-white text-lg font-bold">➤</Text>
+            <Text className="text-white text-lg font-bold"><Ionicons name="send" size={24} color="white" /></Text>
           </TouchableOpacity>
         </View>
       </KeyboardAvoidingView>

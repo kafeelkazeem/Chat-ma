@@ -101,7 +101,7 @@ export default function ChatRoom() {
   const renderMessage = ({ item }: { item: Message }) => {
     const messageContainerStyle = item.isSelf
       ? "bg-[#20A090] self-end rounded-xl rounded-tr-none  my-1 mx-2 p-3 max-w-[80%]"
-      : "bg-[#F3F6F6] self-start rounded-xl my-1 mx-2 p-3 max-w-[80%]";
+      : "bg-[#F3F6F6] self-start rounded-xl roundend-tl-none my-1 mx-2 p-3 max-w-[80%]";
 
     const messageTextStyle = item.isSelf
       ? "text-white text-base"
@@ -147,11 +147,7 @@ export default function ChatRoom() {
             value={message}
             onChangeText={setMessage}
             multiline
-            style={{
-              // Adjust padding to center the text vertically
-              paddingTop: 14,
-              paddingBottom: 14,
-            }}
+            style={{paddingTop: 14, paddingBottom: 14}}
           />
 
           {/* Send Button */}

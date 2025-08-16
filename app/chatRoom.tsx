@@ -99,7 +99,7 @@ export default function ChatRoom() {
   // Use the Message type for the `item` prop from FlatList
   const renderMessage = ({ item }: { item: Message }) => {
     const messageContainerStyle = item.isSelf
-      ? "bg-[#20A090] self-end rounded-xl my-1 mx-2 p-3 max-w-[80%]"
+      ? "bg-[#20A090] self-end rounded-xl rounded-tr-none  my-1 mx-2 p-3 max-w-[80%]"
       : "bg-[#F3F6F6] self-start rounded-xl my-1 mx-2 p-3 max-w-[80%]";
 
     const messageTextStyle = item.isSelf

@@ -7,5 +7,5 @@ export default function SettingsScreen() {
         <Text>Account settings and app preferences will be here.</Text>
       </View>
     );
-  }
+}
   

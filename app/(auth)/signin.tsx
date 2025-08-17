@@ -3,11 +3,11 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 import AuthBtn from "@/components/button/authBtn";
 import { Link, useRouter } from "expo-router";
 import axios, { AxiosError } from "axios";
-import { apiUrl } from "@/constants/apiUrl";
+import { apiUrl, server } from "@/constants/apiUrl";
 import { useState } from "react";
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { io } from "socket.io-client";
 
-// Define the shape of the successful response from your API
 interface LoginResponse {
     token: string;
     user: {
@@ -27,12 +27,42 @@ export default function Signin() {
                 Alert.alert("Login Failed", "Please enter both email and password.");
                 return;
             }
+
             const res = await axios.post<LoginResponse>(`${apiUrl}/signin`, { email, password });
-            const { token } = res.data;
+            const { token, user } = res.data;
+
             if (token) {
                 // Store the JWT token securely
                 await AsyncStorage.setItem('userToken', token);
                 console.log("Token stored successfully:", token);
+
+                const socketUrl = server;
+
+                const socket = io('http://192.168.43.87:3000', {
+                    // Pass the JWT token for authentication, typically in the 'extraHeaders' or 'query'
+                    extraHeaders: {
+                        Authorization: `Bearer ${token}`
+                    },
+                });
+
+                socket.on('connect', () => {
+                    console.log('Connected to Socket.IO server!');
+                    // You can emit initial events or set up listeners here
+                    // e.g., socket.emit('user-online', { userId: user.id });
+                });
+
+                socket.on('disconnect', () => {
+                    console.log('Disconnected from Socket.IO server.');
+                });
+
+                socket.on('connect_error', (err) => {
+                    console.error('Socket.IO connection error:', err.message);
+                    Alert.alert("Socket Connection Error", "Could not connect to the real-time server.");
+                });
+
+                // You might want to store the socket instance globally or in context
+                // for other components to use, or pass it down as props.
+                // For this example, we're just establishing the connection.
 
                 router.navigate('/(tabs)');
             } else {
@@ -40,13 +70,13 @@ export default function Signin() {
             }
         } catch (error) {
             console.log(error)
-            // Handle Axios errors with type safety
             const axiosError = error as AxiosError;
             console.error("Login error:", axiosError.response?.data || axiosError.message);
             const errorMessage = (axiosError.response?.data as { message: string })?.message || "An unexpected error occurred. Please try again.";
             Alert.alert("Login Failed", errorMessage);
         }
     };
+
 
     return (
         <KeyboardAvoidingView className="flex-1" behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
